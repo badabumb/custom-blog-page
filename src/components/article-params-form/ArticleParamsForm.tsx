@@ -1,5 +1,5 @@
-import { ArrowButton } from '../../components/arrow-button';
-import { Button } from '../../components/button';
+import { ArrowButton } from "../../components/arrow-button";
+import { Button } from "../../components/button";
 
 import styles from "./ArticleParamsForm.module.scss";
 import { useState } from "react";
@@ -26,7 +26,6 @@ interface ArticleParamsFormProps {
 			| ((prev: ArticleStateType) => ArticleStateType)
 	) => void;
 }
-
 
 export const ArticleParamsForm = ({
 	setArticleState,
