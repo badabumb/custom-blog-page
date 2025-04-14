@@ -27,9 +27,7 @@ interface ArticleParamsFormProps {
 	) => void;
 }
 
-export const ArticleParamsForm = ({
-	setArticleState,
-}: ArticleParamsFormProps) => {
+export const ArticleParamsForm = ({setArticleState}: ArticleParamsFormProps) => {
 	const [open, setOpen] = useState(false);
 	const [fontFamily, setFontFamily] = useState(
 		defaultArticleState.fontFamilyOption
