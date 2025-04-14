@@ -1,16 +1,16 @@
-import { useState, useRef } from 'react';
-import type { MouseEventHandler } from 'react';
-import clsx from 'clsx';
-import { OptionType } from 'src/constants/articleProps';
-import { Text } from 'components/text';
-import { Spacing } from 'components/spacing';
-import arrowDown from 'src/images/arrow-down.svg';
-import { Option } from './Option';
-import { isFontFamilyClass } from './helpers/isFontFamilyClass';
-import { useEnterSubmit } from './hooks/useEnterSubmit';
-import { useOutsideClickClose } from './hooks/useOutsideClickClose';
+import { useState, useRef } from "react";
+import type { MouseEventHandler } from "react";
+import clsx from "clsx";
+import { OptionType } from "src/constants/articleProps";
+import { Text } from "components/text";
+import { Spacing } from "components/spacing";
+import arrowDown from "src/images/arrow-down.svg";
+import { Option } from "./Option";
+import { isFontFamilyClass } from "./helpers/isFontFamilyClass";
+import { useEnterSubmit } from "./hooks/useEnterSubmit";
+import { useOutsideClickClose } from "./hooks/useOutsideClickClose";
 
-import styles from './Select.module.scss';
+import styles from "./Select.module.scss";
 
 type SelectProps = {
 	selected: OptionType | null;
@@ -51,7 +51,10 @@ export const Select = (props: SelectProps) => {
 		<div>
 			{title && (
 				<>
-					<Text size={12} weight={800} uppercase>
+					<Text
+						size={12}
+						weight={800}
+						uppercase>
 						{title}
 					</Text>
 					<Spacing size={4} />
@@ -61,21 +64,23 @@ export const Select = (props: SelectProps) => {
 				className={styles.selectWrapper}
 				ref={rootRef}
 				data-is-active={isOpen}
-				data-testid='selectWrapper'>
+				data-testid="selectWrapper">
 				<img
 					src={arrowDown}
-					alt='иконка стрелочки'
-					className={clsx(styles.arrow, { [styles.arrow_open]: isOpen })}
+					alt="иконка стрелочки"
+					className={clsx(styles.arrow, {
+						[styles.arrow_open]: isOpen,
+					})}
 				/>
 				<div
 					className={clsx(
 						styles.placeholder,
-						styles[selected?.optionClassName || '']
+						styles[selected?.optionClassName || ""]
 					)}
 					data-status={status}
 					data-selected={!!selected?.value}
 					onClick={handlePlaceHolderClick}
-					role='button'
+					role="button"
 					tabIndex={0}
 					ref={placeholderRef}>
 					<Text
@@ -88,9 +93,13 @@ export const Select = (props: SelectProps) => {
 					</Text>
 				</div>
 				{isOpen && (
-					<ul className={styles.select} data-testid='selectDropdown'>
+					<ul
+						className={styles.select}
+						data-testid="selectDropdown">
 						{options
-							.filter((option) => selected?.value !== option.value)
+							.filter(
+								(option) => selected?.value !== option.value
+							)
 							.map((option) => (
 								<Option
 									key={option.value}

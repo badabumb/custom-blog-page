@@ -10,7 +10,17 @@
   flex-shrink: 0;
   border-right: 1px;
   background-color: #000;
-  transition: transform 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.container:hover {
+  background-color: #ffc802;
+}
+
+.container:active {
+  background-color: #787878;
 }
 
 .container_open {
